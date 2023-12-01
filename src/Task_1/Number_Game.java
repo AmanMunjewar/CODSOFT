@@ -1,12 +1,14 @@
 package Task_1;
+
 import java.util.Random;
 import java.util.Scanner;
+
 public class Number_Game {
     public static int getRandom(){
         Random randObj = new Random();
         return randObj.nextInt(100)+1;
     }
-    public static void main(String[] args) {
+    public static void run_task_1() {
         int randNum = getRandom();
         int guessNum;
         boolean got_guess = false;
