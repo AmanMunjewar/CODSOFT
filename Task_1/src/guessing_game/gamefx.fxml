@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guessing_game.Controller">
+   <children>
+      <Label fx:id="titleLabel" layoutX="148.0" layoutY="63.0" text="Welcome to number game" />
+      <Label layoutX="175.0" layoutY="130.0" text="Enter your guess" />
+      <TextField fx:id="numberInput" layoutX="144.0" layoutY="174.0" />
+      <Button fx:id="submitButton" layoutX="192.0" layoutY="235.0" mnemonicParsing="false" onAction="#guess" text="Submit" />
+      <Label fx:id="outputLabel" layoutX="205.0" layoutY="332.0" />
+   </children>
+</AnchorPane>
