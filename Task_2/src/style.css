@@ -1,0 +1,16 @@
+.root{
+    -fx-background-color: Black;
+}
+
+.label{
+    -fx-font-family: "Lucida console";
+    -fx-font-size: 20;
+    -fx-text-fill: White;
+}
+
+.button {
+    -fx-background-color: #3092b8;
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 20;
+}
+

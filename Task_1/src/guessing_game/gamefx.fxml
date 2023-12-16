@@ -5,13 +5,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guessing_game.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guessing_game.Controller">
    <children>
-      <Label fx:id="titleLabel" layoutX="148.0" layoutY="63.0" text="Welcome to number game" />
-      <Label layoutX="175.0" layoutY="130.0" text="Enter your guess" />
-      <TextField fx:id="numberInput" layoutX="144.0" layoutY="174.0" />
-      <Button fx:id="submitButton" layoutX="192.0" layoutY="235.0" mnemonicParsing="false" onAction="#guess" text="Submit" />
-      <Label fx:id="outputLabel" layoutX="205.0" layoutY="332.0" />
+      <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="63.0" prefHeight="18.0" prefWidth="480.0" text="Welcome to Number Game" />
+      <Label alignment="CENTER" layoutY="130.0" prefHeight="18.0" prefWidth="480.0" text="Enter your guess:" />
+      <TextField fx:id="numberInput" layoutX="145.0" layoutY="174.0" />
+      <Button fx:id="submitButton" layoutX="193.0" layoutY="236.0" mnemonicParsing="false" onAction="#guess" text="Submit" />
+      <Label fx:id="outputLabel" alignment="CENTER" layoutY="332.0" prefHeight="18.0" prefWidth="480.0" />
    </children>
 </AnchorPane>
