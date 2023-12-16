@@ -1,6 +1,8 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -10,9 +12,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        StackPane root = new StackPane();
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 800, 600));
+        Parent root = FXMLLoader.load(getClass().getResource("scene.fxml"));
+        Scene scene = new Scene(root, 650, 500);
+
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+
+        primaryStage.setTitle("ATM machine");
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }
