@@ -1,14 +1,45 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
+
+    public static Database openFile() throws Exception {
+        File file = new File("student_info.txt");
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+        
+        Database database = (Database) ois.readObject();
+        ois.close();
+        return database;
+    }
+
+    public static void closeFile(Database database) throws Exception {
+        File file = new File("student_info.txt");
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
+        oos.writeObject(database);
+        oos.close();
+    }
+
+
     public static void main(String[] args) throws Exception {
-        Database db = new Database();
         Scanner scan = new Scanner(System.in);
+        Database db = new Database();
+
+        System.out.println("================== Welcome to student database ==================");
+                
+        System.out.println("Do you want to use a exsisting file(Y/n)");
+        String choice = scan.nextLine();
+        if (choice.equals("Y") || choice.equals("y")) {
+            db = openFile();    
+        }
+
         int ch;
         boolean isOpen=true;
 
-        System.out.println("================== Welcome to student database ==================");
         
         while (isOpen) {
             System.out.println("\n1. Add student");
@@ -31,6 +62,8 @@ public class App {
                 e.printStackTrace();
                 continue;
             }
+            System.out.println();
+            Thread.sleep(500);
             
             switch (ch) {
                 case 1:
@@ -49,7 +82,7 @@ public class App {
                     db.displayAll();
                     break;
                 case 6:
-                    db.close();
+                    closeFile(db);
                     isOpen=false;
                     break;
                 default:

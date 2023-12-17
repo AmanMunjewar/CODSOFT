@@ -1,12 +1,13 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Database {
+public class Database implements Serializable{
     ArrayList<Student> student_list = new ArrayList<Student>();
-    Scanner scan = new Scanner(System.in);
 
     public void addStudent() throws InterruptedException{
+        Scanner scan = new Scanner(System.in);
         int roll, grade;
         String name;
         try {
@@ -23,12 +24,14 @@ public class Database {
         } catch (Exception e){
             e.printStackTrace();
             return;
+        } finally {
+            scan.close();
         }
-        
         student_list.add(new Student(roll, name, grade));
     }
 
     public void removeStudent() throws InterruptedException{
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter the roll no. to remove: ");
         int roll;
 
@@ -41,6 +44,8 @@ public class Database {
         } catch (Exception e){
             e.printStackTrace();
             return;
+        } finally {
+            scan.close();
         }
 
         for (int i = 0; i < student_list.size(); i++) {
@@ -53,6 +58,7 @@ public class Database {
     }
 
     public void searchStudent() throws InterruptedException{
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter the roll no. to search: ");
         int roll;
 
@@ -65,6 +71,8 @@ public class Database {
         } catch (Exception e){
             e.printStackTrace();
             return;
+        } finally {
+            scan.close();
         }
 
         System.out.println(String.format("%4s %7s %6s", "Roll", "Name", "Grade"));
@@ -78,6 +86,7 @@ public class Database {
     }
 
     public void editInfo() throws InterruptedException{
+        Scanner scan = new Scanner(System.in);
         System.out.print("Enter the roll no. to edit: ");
         int roll;
 
@@ -90,6 +99,8 @@ public class Database {
         } catch (Exception e){
             e.printStackTrace();
             return;
+        } finally {
+            scan.close();
         }
 
         for (int i = 0; i < student_list.size(); i++) {
@@ -112,9 +123,5 @@ public class Database {
         for (Student student : student_list) {
             student.displayInfo();    
         }
-    }
-
-    public void close(){
-        scan.close();
     }
 }
