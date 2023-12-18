@@ -12,6 +12,6 @@
       <Label alignment="CENTER" layoutY="138.0" prefHeight="18.0" prefWidth="561.0" text="Enter a sentence: " />
       <Label fx:id="outputLabel" alignment="CENTER" layoutX="-1.0" layoutY="294.0" prefHeight="18.0" prefWidth="561.0" text="Word Count: " />
       <Button layoutX="230.0" layoutY="232.0" mnemonicParsing="false" onAction="#counter" text="Submit" />
-      <Button layoutX="213.0" layoutY="330.0" mnemonicParsing="false" onAction="#getFile" text="Choose a file" />
+      <Button layoutX="207.0" layoutY="330.0" mnemonicParsing="false" onAction="#getFile" text="Choose a file" />
    </children>
 </AnchorPane>

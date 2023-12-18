@@ -24,9 +24,7 @@ public class Database implements Serializable{
         } catch (Exception e){
             e.printStackTrace();
             return;
-        } finally {
-            scan.close();
-        }
+        } 
         student_list.add(new Student(roll, name, grade));
     }
 
@@ -44,9 +42,7 @@ public class Database implements Serializable{
         } catch (Exception e){
             e.printStackTrace();
             return;
-        } finally {
-            scan.close();
-        }
+        } 
 
         for (int i = 0; i < student_list.size(); i++) {
             if (roll == student_list.get(i).getRoll()) {
@@ -71,9 +67,7 @@ public class Database implements Serializable{
         } catch (Exception e){
             e.printStackTrace();
             return;
-        } finally {
-            scan.close();
-        }
+        } 
 
         System.out.println(String.format("%4s %7s %6s", "Roll", "Name", "Grade"));
         for (Student student : student_list) {
@@ -99,9 +93,7 @@ public class Database implements Serializable{
         } catch (Exception e){
             e.printStackTrace();
             return;
-        } finally {
-            scan.close();
-        }
+        } 
 
         for (int i = 0; i < student_list.size(); i++) {
             if (roll == student_list.get(i).getRoll()) {
